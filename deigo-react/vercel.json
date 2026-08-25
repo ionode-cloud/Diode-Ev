@@ -1,4 +1,5 @@
 {
+  "framework": "vite",
   "buildCommand": "cd deigo-react && npm install && npm run build",
   "outputDirectory": "deigo-react/dist"
 }
