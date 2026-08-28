@@ -1,0 +1,220 @@
+.benefits {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.benefits__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.benefits__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.benefits__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(21, 24, 33, 0.97) 0%,
+    rgba(21, 24, 33, 0.75) 30%,
+    rgba(21, 24, 33, 0.75) 70%,
+    rgba(21, 24, 33, 0.97) 100%
+  );
+}
+
+.benefits__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.benefits__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.benefits__title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.benefits__subtitle {
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 520px;
+  color: var(--color-gray-400);
+}
+
+/* Columns */
+.benefits__columns {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Center */
+.benefits__center {
+  position: relative;
+  width: 380px;
+  flex-shrink: 0;
+}
+
+.benefits__charger-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61, 232, 158, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  animation: benefits-glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes benefits-glow-pulse {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+.benefits__charger-canvas {
+  width: 100% !important;
+}
+
+/* Benefit Items */
+.benefits__col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.benefit-item--left {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.benefit-item--right {
+  flex-direction: row;
+  text-align: left;
+}
+
+/* Dot */
+.benefit-item__dot {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(61, 232, 158, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(61, 232, 158, 0.06);
+  margin-top: 4px;
+  position: relative;
+}
+
+.benefit-item__dot::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(61, 232, 158, 0.3), transparent);
+}
+
+.benefit-item--left .benefit-item__dot::after {
+  left: 100%;
+  margin-left: 8px;
+  background: linear-gradient(to left, rgba(61, 232, 158, 0.3), transparent);
+}
+
+.benefit-item--right .benefit-item__dot::after {
+  right: 100%;
+  margin-right: 8px;
+}
+
+.benefit-item__dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.75); opacity: 0.6; }
+}
+
+/* Content */
+.benefit-item__content {}
+
+.benefit-item__title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.benefit-item__desc {
+  font-size: 13px;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .benefits__center {
+    width: 320px;
+  }
+  .benefits__columns {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits__columns {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .benefits__col--left {
+    order: 2;
+  }
+  .benefits__center {
+    order: 1;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .benefits__col--right {
+    order: 3;
+  }
+  .benefit-item--left {
+    flex-direction: row;
+    text-align: left;
+  }
+  .benefit-item__dot::after {
+    display: none;
+  }
+}

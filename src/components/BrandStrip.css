@@ -1,0 +1,66 @@
+.brandstrip {
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 40px 0;
+}
+
+.brandstrip__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.brandstrip__label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  margin-bottom: 32px;
+}
+
+.brandstrip__logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brandstrip__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 100px;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  filter: grayscale(1);
+}
+
+.brandstrip__logo:hover {
+  color: rgba(255, 255, 255, 0.75);
+  transform: translateY(-3px);
+  filter: grayscale(0.3);
+}
+
+.brandstrip__logo-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .brandstrip__logos {
+    justify-content: center;
+    gap: 28px;
+  }
+  .brandstrip__logo {
+    flex: 0 0 auto;
+    min-width: 80px;
+  }
+}

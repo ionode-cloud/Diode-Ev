@@ -1,0 +1,177 @@
+.howitworks {
+  background: #000000;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.howitworks::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(61, 232, 158, 0.3), transparent);
+}
+
+.howitworks__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.howitworks__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.howitworks__title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.howitworks__subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Cards grid */
+.howitworks__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Individual card */
+.howcard {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.howcard:hover {
+  border-color: rgba(61, 232, 158, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Image */
+.howcard__img-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.howcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.howcard:hover .howcard__img {
+  transform: scale(1.05);
+}
+
+.howcard__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(21, 24, 33, 0.95) 100%
+  );
+}
+
+/* Play button */
+.howcard__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.howcard:hover .howcard__play {
+  background: rgba(61, 232, 158, 0.25);
+  border-color: rgba(61, 232, 158, 0.6);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 24px rgba(61, 232, 158, 0.3);
+}
+
+/* Number badge */
+.howcard__number {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  opacity: 0.2;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+
+/* Content */
+.howcard__content {
+  padding: 24px 28px 28px;
+}
+
+.howcard__accent-line {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.howcard__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.howcard__desc {
+  font-size: 14px;
+  color: var(--color-gray-400);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .howitworks__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .howitworks__cards .howcard:last-child {
+    grid-column: 1 / -1;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .howitworks__cards {
+    grid-template-columns: 1fr;
+  }
+  .howitworks__cards .howcard:last-child {
+    max-width: 100%;
+  }
+}
