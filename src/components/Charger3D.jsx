@@ -2,7 +2,6 @@ import { useRef, useMemo, useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import {
   OrbitControls,
-  Environment,
   ContactShadows,
   Float,
   useTexture,
@@ -474,23 +473,20 @@ export default function Charger3D({
         }}
         camera={{ position: [0, 0.1, 5.8], fov: 44 }}
       >
-        {/* Cinematic Studio Lights */}
-        <ambientLight intensity={0.4} />
+        {/* Cinematic Studio Lights (Zero external network dependencies / No CORS errors) */}
+        <hemisphereLight skyColor="#d8ecfa" groundColor="#06080d" intensity={0.65} />
+        <ambientLight intensity={0.35} />
         <directionalLight
           position={[4, 6, 4]}
-          intensity={2.2}
+          intensity={2.4}
           castShadow
           shadow-mapSize={[1024, 1024]}
           shadow-bias={-0.0001}
           color="#ffffff"
         />
-        <directionalLight position={[-4, 3, -2]} intensity={0.8} color="#00e5ff" />
+        <directionalLight position={[-4, 3, -2]} intensity={0.9} color="#00e5ff" />
         <directionalLight position={[0, -2, 3]} intensity={0.5} color="#3de89e" />
-
-        {/* Environment map for realistic chrome/glass reflections */}
-        <Suspense fallback={null}>
-          <Environment preset="city" />
-        </Suspense>
+        <pointLight position={[0, 4, 2]} intensity={0.8} color="#ffffff" />
 
         {/* Motionable 3D Diode Station with Floating physics */}
         <Suspense fallback={null}>

@@ -1,6 +1,6 @@
 import { useRef, useMemo } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { RoundedBox, ContactShadows, Environment, Text3D } from '@react-three/drei'
+import { RoundedBox, ContactShadows, Text3D } from '@react-three/drei'
 import * as THREE from 'three'
 
 /* ─── MATERIALS ────────────────────────────────────────── */
