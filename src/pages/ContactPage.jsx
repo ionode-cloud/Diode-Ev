@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import ContactSection from '../components/sections/ContactSection.jsx';
+import MarqueeSection from '../components/sections/MarqueeSection.jsx';
+import TestimonialsSection from '../components/sections/TestimonialsSection.jsx';
+import StatsSection from '../components/sections/StatsSection.jsx';
 
 const FAQS = [
   {
@@ -48,6 +51,12 @@ export default function ContactPage({ onNavigate }) {
 
       {/* Main Interactive Contact Section */}
       <ContactSection />
+
+      {/* Marquee */}
+      <MarqueeSection />
+
+      {/* Stats */}
+      <StatsSection />
 
       {/* Global Engineering Hubs & FAQ */}
       <section className="contact-extra-section">
@@ -112,6 +121,9 @@ export default function ContactPage({ onNavigate }) {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
     </div>
   );
 }

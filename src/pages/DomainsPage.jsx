@@ -1,4 +1,8 @@
 import DomainsSection from '../components/sections/DomainsSection.jsx';
+import StatsSection from '../components/sections/StatsSection.jsx';
+import TechStackSection from '../components/sections/TechStackSection.jsx';
+import MarqueeSection from '../components/sections/MarqueeSection.jsx';
+import ParallaxVideoSection from '../components/sections/ParallaxVideoSection.jsx';
 
 export default function DomainsPage({ onNavigate }) {
   return (
@@ -22,6 +26,12 @@ export default function DomainsPage({ onNavigate }) {
 
       {/* Main Domains Interactive Section */}
       <DomainsSection />
+
+      {/* Animated Tech Marquee */}
+      <MarqueeSection />
+
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* Industrial Deployment Sectors */}
       <section className="domains-sectors-section">
@@ -70,6 +80,12 @@ export default function DomainsPage({ onNavigate }) {
           </div>
         </div>
       </section>
+
+      {/* Technology Stack */}
+      <TechStackSection />
+
+      {/* Parallax video global reach */}
+      <ParallaxVideoSection onNavigate={onNavigate} />
     </div>
   );
 }

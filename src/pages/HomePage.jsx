@@ -1,4 +1,9 @@
 import HeroSection from '../components/sections/HeroSection.jsx';
+import MarqueeSection from '../components/sections/MarqueeSection.jsx';
+import StatsSection from '../components/sections/StatsSection.jsx';
+import TiltCardsSection from '../components/sections/TiltCardsSection.jsx';
+import ParallaxVideoSection from '../components/sections/ParallaxVideoSection.jsx';
+import TestimonialsSection from '../components/sections/TestimonialsSection.jsx';
 
 export default function HomePage({ onNavigate, onOpenOs }) {
   return (
@@ -10,7 +15,10 @@ export default function HomePage({ onNavigate, onOpenOs }) {
         onNavigateContact={() => onNavigate('contact')}
       />
 
-      {/* 2. Highlights & Quick Navigation Grid */}
+      {/* 2. Animated Marquee Tech Strip */}
+      <MarqueeSection />
+
+      {/* 3. Highlights & Quick Navigation Grid */}
       <section className="home-highlights-section">
         <div className="home-highlights-container">
           <div className="section-tag-row">
@@ -70,6 +78,18 @@ export default function HomePage({ onNavigate, onOpenOs }) {
           </div>
         </div>
       </section>
+
+      {/* 4. Animated Stats with Particles */}
+      <StatsSection />
+
+      {/* 5. 3D Tilt Cards Showcase */}
+      <TiltCardsSection />
+
+      {/* 6. Full-bleed Parallax Video Section */}
+      <ParallaxVideoSection onNavigate={onNavigate} />
+
+      {/* 7. Testimonials & Team */}
+      <TestimonialsSection />
     </div>
   );
 }

@@ -1,4 +1,8 @@
 import AboutSection from '../components/sections/AboutSection.jsx';
+import TimelineSection from '../components/sections/TimelineSection.jsx';
+import TechStackSection from '../components/sections/TechStackSection.jsx';
+import TestimonialsSection from '../components/sections/TestimonialsSection.jsx';
+import MarqueeSection from '../components/sections/MarqueeSection.jsx';
 
 export default function AboutPage({ onOpenOs, onNavigate }) {
   return (
@@ -22,6 +26,9 @@ export default function AboutPage({ onOpenOs, onNavigate }) {
 
       {/* Main Interactive About Section with 3D Head & Metrics */}
       <AboutSection onOpenOs={onOpenOs} />
+
+      {/* Marquee tech strip */}
+      <MarqueeSection />
 
       {/* Additional Pillars Section */}
       <section className="about-pillars-section">
@@ -70,6 +77,15 @@ export default function AboutPage({ onOpenOs, onNavigate }) {
           </div>
         </div>
       </section>
+
+      {/* Technology Stack with Progress Bars */}
+      <TechStackSection />
+
+      {/* Animated Timeline / Roadmap */}
+      <TimelineSection />
+
+      {/* Testimonials & Team */}
+      <TestimonialsSection />
     </div>
   );
 }

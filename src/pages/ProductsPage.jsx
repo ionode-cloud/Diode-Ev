@@ -1,4 +1,8 @@
 import ProductsSection from '../components/sections/ProductsSection.jsx';
+import TiltCardsSection from '../components/sections/TiltCardsSection.jsx';
+import StatsSection from '../components/sections/StatsSection.jsx';
+import TestimonialsSection from '../components/sections/TestimonialsSection.jsx';
+import MarqueeSection from '../components/sections/MarqueeSection.jsx';
 
 export default function ProductsPage({ onNavigate }) {
   return (
@@ -22,6 +26,15 @@ export default function ProductsPage({ onNavigate }) {
 
       {/* Main Products Catalog Section */}
       <ProductsSection />
+
+      {/* Animated Marquee */}
+      <MarqueeSection />
+
+      {/* 3D Tilt Card Showcase */}
+      <TiltCardsSection />
+
+      {/* Stats */}
+      <StatsSection />
 
       {/* Enterprise Integration & Custom Orders */}
       <section className="products-enterprise-section">
@@ -64,6 +77,9 @@ export default function ProductsPage({ onNavigate }) {
           </div>
         </div>
       </section>
+
+      {/* Client Testimonials */}
+      <TestimonialsSection />
     </div>
   );
 }
